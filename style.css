@@ -16,6 +16,9 @@ body {
   color: var(--gray-800);
   background: var(--gray-100);
 }
+.home #content {
+  text-align: center;
+}
 .container {
   width: min(90%, 1200px);
   margin-inline: auto;
@@ -106,6 +109,9 @@ body {
   gap: 2rem;
   margin: 3rem 0;
 }
+.highlight {
+  text-align: center;
+}
 .highlight h2 {
   margin-bottom: 0.5rem;
   color: var(--brand);
@@ -175,4 +181,86 @@ footer {
     padding: 1rem;
     display: block;
   }
+}
+/* Page links section */
+.page-links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 0;
+  text-align: center;
+}
+.page-links a {
+  text-decoration: none;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* People page */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--brand);
+  background: transparent;
+  color: var(--brand);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--brand);
+  color: #fff;
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.person-card {
+  text-align: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.person-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* Classes page */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.class-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Membership table */
+.membership-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.membership-table th,
+.membership-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  text-align: left;
 }
