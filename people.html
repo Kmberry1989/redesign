@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>People | Kokomo Art Association</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="/">KAA</a>
+      <button class="toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/people" class="active">People</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/classes">Classes</a></li>
+        <li><a href="/artworks-gallery">Gallery</a></li>
+        <li><a href="/membership">Join</a></li>
+        <li><a href="/volunteer">Volunteer</a></li>
+        <li><a class="btn-donate" href="https://kokomoartassociation.networkforgood.com/projects/218762-donate-to-the-kokomo-art-association-llc" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="/contact-us">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" class="container">
+    <h1>Meet Our People</h1>
+    <p class="lead">Artists, instructors, and volunteers who propel our mission forward.</p>
+
+    <div class="filters">
+      <button data-filter="all" class="filter-btn active">All</button>
+      <button data-filter="artist" class="filter-btn">Artists</button>
+      <button data-filter="instructor" class="filter-btn">Instructors</button>
+      <button data-filter="board" class="filter-btn">Board</button>
+    </div>
+
+    <div class="people-grid">
+      <article class="person-card artist" data-role="artist">
+        <img src="/assets/people/marilyn-aleman.jpg" alt="Portrait of Marilyn Aleman" />
+        <h3>Marilyn Aleman</h3>
+        <p class="role">Artist</p>
+      </article>
+      <article class="person-card instructor" data-role="instructor">
+        <img src="/assets/people/ramona-daniels.jpg" alt="Portrait of Ramona Daniels" />
+        <h3>Ramona Daniels</h3>
+        <p class="role">Instructor – Watercolor</p>
+      </article>
+      <article class="person-card board" data-role="board">
+        <img src="/assets/people/mark-hobson.jpg" alt="Portrait of Mark Hobson" />
+        <h3>Mark Hobson</h3>
+        <p class="role">Board Vice President</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links container">
+      <a href="/about">About</a>
+      <a href="/people">People</a>
+      <a href="/events">Events</a>
+      <a href="/contact-us">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <p class="copyright">© 2025 Kokomo Art Association. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.person-card');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const role = btn.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = role === 'all' || card.classList.contains(role) ? 'block' : 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
